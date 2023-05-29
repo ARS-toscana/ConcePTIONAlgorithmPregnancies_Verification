@@ -15,7 +15,7 @@ DirectoryPregnancyScript <- "MyPC/home/ConcePTIONAlgorithmPregnancies"
 DatasourceNameConceptionCDM <- "ARS"
 ```
 
-  3. Define the sample size to be sampled.
+  3. In the _Parameter to be filled_ section also define the size of the sample to be extracted.
 
   ```
   Sample_Size_Green_Discordant <- 0
