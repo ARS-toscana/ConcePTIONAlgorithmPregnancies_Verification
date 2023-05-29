@@ -6,8 +6,7 @@ Repository of the script for additional verification of the ConcePTION algorithm
 
   1. Download the script using the green "code" button at the top of this page and unzip it to any location on the machine where the ConcePTIONAlgorithmPregnancies folder is located. 
 
-![img](https://github.com/ARS-toscana/ConcePTIONAlgorithmPregnancies_Verification/blob/Documentation/img/code.png) 
-<br>
+<img src="https://github.com/ARS-toscana/ConcePTIONAlgorithmPregnancies_Verification/blob/Documentation/img/code.png"  width="600" height="220">
 
   2. Open the file **to_run_PA_sampling.R** and in the _Parameter to be filled_ section include the directory in which the ConcePTIONAlgorithmPregnancies folder is located and the Datasource name. 
 
