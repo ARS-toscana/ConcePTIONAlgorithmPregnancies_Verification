@@ -15,16 +15,14 @@ DirectoryPregnancyScript <- "MyPC/home/ConcePTIONAlgorithmPregnancies"
 DatasourceNameConceptionCDM <- "ARS"
 ```
 
-  3. In the _Parameter to be filled_ section also define the size of the sample to be extracted.
+  3. In the _Parameter to be filled_ section also define the strata into which the sample will be extracted (**condition**) and the respective sample sizes.
 
   ```
-  Sample_Size_Green_Discordant <- 0
-  Sample_Size_Green_Concordant <- 0
-  Sample_Size_Yellow_Discordant <- 0
-  Sample_Size_Yellow_SlightlyDiscordant <- 0
-  Sample_Size_Yellow_Concordant <- 0
-  Sample_Size_Blue <- 50
-  Sample_Size_Red <- 20
+condition <- list(cond_1 = "highest_order_quality == 20", 
+                  cond_2 = "highest_order_quality == 50")
+
+sample_sizes <- list(cond_1 = 25, 
+                     cond_2 = 25)
   ```
   
   4. Save changes, select all rows, and execute. 
