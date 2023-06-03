@@ -24,10 +24,10 @@ setwd(thisdir)
 DirectoryPregnancyScript <- "/home/giorgio/Documents/GitHub_Repo/ConcePTIONAlgorithmPregnancies"
 DatasourceNameConceptionCDM <- "ARS"
 
-condition <- list(cond_1 = "highest_order_quality == 10", 
+condition <- list(cond_1 = "highest_order_quality == 20", 
                   cond_2 = "highest_order_quality == 50")
 
-sample_sizes <- list(cond_1 = 15, 
+sample_sizes <- list(cond_1 = 25, 
                      cond_2 = 25)
 ################################################################################
 
