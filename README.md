@@ -19,7 +19,7 @@ DatasourceNameConceptionCDM <- "ARS"
 
   ```
 condition <- list(cond_1 = "highest_order_quality == 20", 
-                  cond_2 = "highest_order_quality == 50")
+                   cond_2 = "highest_order_quality == 50")
 
 sample_sizes <- list(cond_1 = 25, 
                      cond_2 = 25)
@@ -31,6 +31,7 @@ sample_sizes <- list(cond_1 = 25,
 
 Once the program has been run a folder called g_sampling_output will be generated. 
 The file for verification (**sample_from_pregnancies_anon.csv**) will be created in this folder.
-
+<!-- 
 The validation report is also available. Once the sample_from_pregnancies_anon.csv file is filled, save it in the same folder with the name **sample_from_pregnancies_verified.csv** and run the **to_run_post_verification_script.R** file.
 The report will appear in the _verification_output_ folder with the name **Report_verification_preg.html**.
+-->
