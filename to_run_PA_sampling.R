@@ -21,16 +21,14 @@ setwd(thisdir)
 #-----------------------
 # Parameter to be filled
 #-----------------------
-DirectoryPregnancyScript <- "/home/giorgio/GitHubRepo/ConcePTIONAlgorithmPregnancies"
+DirectoryPregnancyScript <- "/home/giorgio/Documents/GitHub_Repo/ConcePTIONAlgorithmPregnancies"
 DatasourceNameConceptionCDM <- "ARS"
 
-Sample_Size_Green_Discordant <- 0
-Sample_Size_Green_Concordant <- 0
-Sample_Size_Yellow_Discordant <- 10
-Sample_Size_Yellow_SlightlyDiscordant <- 10
-Sample_Size_Yellow_Concordant <- 10
-Sample_Size_Blue <- 0
-Sample_Size_Red <- 20
+condition <- list(cond_1 = "highest_order_quality == 10", 
+                  cond_2 = "highest_order_quality == 50")
+
+sample_sizes <- list(cond_1 = 15, 
+                     cond_2 = 25)
 ################################################################################
 
 
@@ -46,15 +44,10 @@ source(paste0(thisdir, "/p_functions/sampling_function.R"))
 source(paste0(thisdir, "/p_functions/RecoverAllRecordsOfAPregnanciesList.R")) 
 
 #sampling pregnancies
-list_of_samples <- PA_sampling(DirectoryPregnancyScript = DirectoryPregnancyScript,
-                               DatasourceNameConceptionCDM = DatasourceNameConceptionCDM, 
-                               Sample_Size_Green_Discordant = Sample_Size_Green_Discordant,
-                               Sample_Size_Green_Concordant = Sample_Size_Green_Concordant,
-                               Sample_Size_Yellow_Discordant = Sample_Size_Yellow_Discordant,
-                               Sample_Size_Yellow_SlightlyDiscordant = Sample_Size_Yellow_SlightlyDiscordant,
-                               Sample_Size_Yellow_Concordant = Sample_Size_Yellow_Concordant,
-                               Sample_Size_Blue = Sample_Size_Blue,
-                               Sample_Size_Red = Sample_Size_Red)
+list_of_samples <- PA_sampling_condition(DirectoryPregnancyScript = DirectoryPregnancyScript,
+                                         DatasourceNameConceptionCDM = DatasourceNameConceptionCDM, 
+                                         condition = condition,
+                                         sample_sizes = sample_sizes)
 
 
 DT_sample <- rbindlist(list_of_samples)
@@ -70,8 +63,3 @@ sample <- RecoverAllRecordsOfAPregnanciesList(DatasetInput =  DatasetInput,
                                               DirectoryOutputCsv = DirectoryOutputCsv,
                                               anonymous = TRUE,
                                               validation_variable = TRUE)
-
-#coping file for post verification report
-file.copy(paste0(DirectoryPregnancyScript,'/g_export/TableReconciliation.csv'), DirectoryOutputCsv)
-file.copy(paste0(DirectoryPregnancyScript,'/p_macro/to_run_post_verification_script.R'), DirectoryOutputCsv)
-file.copy(paste0(DirectoryPregnancyScript,'/p_macro/Report_verification_preg.Rmd'), DirectoryOutputCsv)
